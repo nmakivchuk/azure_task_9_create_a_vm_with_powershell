@@ -11,7 +11,6 @@ $sshKeyPublicKey = Get-Content "~/.ssh/id_rsa.pub"
 $vmName = "matebox"
 $vmImage = "Ubuntu2204"
 $vmSize = "Standard_B1s"
-$domainNameLabel = "student-mate-vm-9.uksouth.cloudapp.azure.com"
 
 Write-Host "Creating a resource group $resourceGroupName ..."
 New-AzResourceGroup `
@@ -44,7 +43,6 @@ New-AzPublicIpAddress `
 	-Location $location `
 	-Sku Standard `
 	-AllocationMethod Static `
-	-DomainNameLabel $domainNameLabel `
 
 Write-Host "Creating a SSH key resource $sshKeyName ..."
 New-AzSshKey `
